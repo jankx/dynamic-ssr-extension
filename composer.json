@@ -1,0 +1,14 @@
+{
+    "name": "jankx/dynamic-ssr",
+    "description": "Dynamic SSR Blocks",
+    "type": "jankx-extension",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jankx\\Extensions\\DynamicSsr\\": [
+                "",
+                "includes/"
+            ]
+        }
+    }
+}

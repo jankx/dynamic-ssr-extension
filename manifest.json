@@ -1,0 +1,14 @@
+{
+    "name": "Dynamic SSR Blocks",
+    "version": "1.0.0",
+    "description": "Provides Dynamic SSR layout and template blocks.",
+    "author": "Jankx",
+    "extension_id": "dynamic-ssr",
+    "caller": {
+        "file": "DynamicSsrExtension.php",
+        "class": "Jankx\\Extensions\\DynamicSsr\\DynamicSsrExtension",
+        "method": "init"
+    },
+    "auto_activate": true,
+    "enabled": true
+}
