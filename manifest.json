@@ -1,6 +1,6 @@
 {
     "name": "Dynamic SSR Blocks",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Provides Dynamic SSR layout and template blocks.",
     "author": "Jankx",
     "extension_id": "dynamic-ssr",
