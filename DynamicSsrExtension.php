@@ -3,7 +3,6 @@
 namespace Jankx\Extensions\DynamicSsr;
 
 use Jankx\Extensions\AbstractExtension;
-use Jankx\Services\ViewService;
 
 class DynamicSsrExtension extends AbstractExtension
 {
@@ -15,6 +14,7 @@ class DynamicSsrExtension extends AbstractExtension
     {
         add_action('jankx/gutenberg/register-blocks', [$this, 'register_extension_blocks'], 10, 2);
         add_filter('jankx/view_service/paths', [$this, 'register_template_paths'], 5, 1);
+        add_filter('jankx/renderer/ssr_generator_class', [$this, 'register_ssr_generator_class'], 10, 1);
     }
 
     /**
@@ -32,6 +32,19 @@ class DynamicSsrExtension extends AbstractExtension
             array_unshift($paths, $templates_dir);
         }
         return $paths;
+    }
+
+    /**
+     * Provide the SSR generator class to the framework Renderer.
+     * Called via filter `jankx/renderer/ssr_generator_class`.
+     *
+     * @param string|null $class Currently registered class (null = none yet)
+     * @return string Fully-qualified class name
+     */
+    public function register_ssr_generator_class(?string $class): string
+    {
+        require_once __DIR__ . '/includes/Generators/SsrViewGenerator.php';
+        return \Jankx\Extensions\DynamicSsr\Generators\SsrViewGenerator::class;
     }
 
     public function register_extension_blocks($repository, $app): void

@@ -11,7 +11,7 @@ use Jankx\Layouts\DynamicDataLayout\ContentLoopLayoutManager;
 use Jankx\Layouts\DynamicDataLayout\DynamicDataLayoutManager;
 use Jankx\Layouts\DynamicDataLayout\AttributeSanitizer;
 use Jankx\Layouts\DynamicDataLayout\BlockTemplateLayoutDecorator;
-use Jankx\Layouts\DynamicDataLayout\Generators\SsrViewGenerator;
+use Jankx\Extensions\DynamicSsr\Generators\SsrViewGenerator;
 
 class DynamicSsrTemplateBlock extends Block
 {
